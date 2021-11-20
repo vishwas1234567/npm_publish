@@ -1,0 +1,25 @@
+name: "🚀 release"
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+    release:
+        name: release 📚
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout🔎
+              uses: actions/checkout@v2.4.0
+            - name: node package deploy
+              uses: actions/setup-node@v2.4.1
+              with:
+                  node-version: 12
+                  registry-url: https://registry.npmjs.org
+            - name: 🚀 publish to NPM
+              run: npm publish --access public
+              working-directory: my-package
+              env:
+                  NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
