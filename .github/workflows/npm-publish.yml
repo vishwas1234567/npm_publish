@@ -1,4 +1,4 @@
-name: "🚀 release"
+name: "🚀 release github packages NPM"
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
                   node-version: 12
                   registry-url: https://npm.pkg.github.com/
             - name: 🚀 publish to NPM
-              run: npm publish --access public
+              run: npm publish
               working-directory: my-package
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
