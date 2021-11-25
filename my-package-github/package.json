@@ -1,0 +1,32 @@
+{
+    "name": "@github/my-first-package-from-vishwas-NPM",
+    "version": "0.0.1",
+    "description": "npm package tutorial for the publishing",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "files": [
+        "index.js"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/vishwas1234567/npm_publish.git"
+    },
+    "keywords": [
+        "npm",
+        "publish",
+        "package",
+        "registry"
+    ],
+    "author": {
+        "name": "vishwas narayan",
+        "email": "vishwasnarayan2345@gmail.com",
+        "url": "https://hacksterdude.web.app"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/vishwas1234567/npm_publish/issues"
+    },
+    "homepage": "https://github.com/vishwas1234567/npm_publish/#readme"
+}
