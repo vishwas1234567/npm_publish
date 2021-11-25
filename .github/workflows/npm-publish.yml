@@ -17,5 +17,6 @@ jobs:
           scope: '@YOUR_USERNAME'
       - run: npm install
       - run: npm publish
+        working-directory: my-package-github
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
