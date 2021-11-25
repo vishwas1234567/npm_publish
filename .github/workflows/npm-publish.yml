@@ -14,9 +14,9 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - run: cd npm_publish/my-package
       - run: npm ci
       - run: npm test
+        working-directory: my-package
 
   publish-gpr:
     needs: build
@@ -31,3 +31,4 @@ jobs:
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          working-directory: my-package
