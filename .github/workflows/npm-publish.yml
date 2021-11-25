@@ -17,6 +17,6 @@ jobs:
           scope: '@YOUR_USERNAME'
       - run: npm install
       - run: npm publish
-        working-directory: my-package-github
+        working-directory: new1
         env:
           NODE_AUTH_TOKEN: ${{secrets.NEW_TOKEN}}
