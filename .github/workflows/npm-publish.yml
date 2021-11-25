@@ -1,4 +1,4 @@
-name: Node.js Package
+name: "🚀 release"
 
 on:
   push:
@@ -7,28 +7,19 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
-      - run: npm ci
-      - run: npm test
-        working-directory: my-package
-
-  publish-gpr:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
-          registry-url: https://npm.pkg.github.com/
-      - run: npm ci
-      - run: npm publish
+    release:
+        name: release 📚
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout🔎
+              uses: actions/checkout@v2.4.0
+            - name: node package deploy
+              uses: actions/setup-node@v2.4.1
+              with:
+                  node-version: 12
+                  registry-url: https://npm.pkg.github.com/
+            - name: 🚀 publish to NPM
+              run: npm publish --access public
+              working-directory: my-package
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          working-directory: my-package
